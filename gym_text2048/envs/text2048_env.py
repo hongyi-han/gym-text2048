@@ -61,7 +61,7 @@ class Text2048Env(gym.Env):
         empty_tiles = [t for t in product(*tee(range(self.size)))
                       if self.board[t] == 0]
         if len(empty_tiles) > 0:
-            k = self.np_random.randint(len(empty_tiles))
+            k = self.np_random.integers(len(empty_tiles))
             value = 1 if self.np_random.random() < 0.9 else 2
             self.board[empty_tiles[k]] = value
 
